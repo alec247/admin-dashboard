@@ -4,6 +4,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -15,17 +20,105 @@
     display: grid;
     background-color: green;
     grid-area: 1 / 2 / 2 / -1;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.searchbar {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    align-items: center;
+}
+
+.header-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.user-info {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
 }
 
 .sidebar {
     display: grid;
     background-color: blue;
     grid-area: 1 / 1 / -1 / 2;
+    color: white;
+}
+
+.logo > h2 {
+    display: inline;
+}
+
+.navbar {
+    display: grid;
+}
+
+.foobar {
+    display: grid;
 }
 
 .content {
     display: grid;
     background-color: orange;
     grid-area: 2 / 2 / -1 / -1;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 2rem 1.5rem;
+    gap: 1rem;
 }
 
+.projects {
+    grid-area: 1 / 1 / -1 / -2;
+}
+
+#projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.card {
+    border: solid black 1px;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: ;
+}
+
+.announcements {
+    grid-area: 1 / 2 / -2 / -1;
+}
+
+#announcements-grid {
+    border: solid black 1px;
+    padding: 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.trending {
+    grid-area: 2 / 2 / -1 / -1;
+}
+
+#trending-grid {
+    display: grid;
+    border: solid black 1px;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.trending-profile {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
