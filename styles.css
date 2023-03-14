@@ -1,3 +1,8 @@
+:root {
+    --content-padding-bot: 5rem;
+    --content-padding: 2rem 1.5rem var(--content-padding-bot) 1.5rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +14,17 @@ a {
     color: white;
 }
 
+button {
+    border: none;
+}
+
+img {
+    height: auto;
+    width: 2rem;
+    background-color: none;
+    border: none;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -18,16 +34,26 @@ a {
 
 .header {
     display: grid;
-    background-color: green;
+    background-color: rgb(250, 250, 250);
     grid-area: 1 / 2 / 2 / -1;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
+    padding: 2rem;
+    box-shadow: 5px 5px red;
 }
 
 .searchbar {
     display: grid;
     grid-template-columns: 1fr 10fr;
     align-items: center;
+}
+
+.searchbar > input {
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 1rem;
+    height: 2rem;
+    width: clamp(5rem, 75%, 100%);
 }
 
 .header-profile {
@@ -40,6 +66,23 @@ a {
 .user-info {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-img {
+    width: 3rem;
+    justify-self: center;
+}
+
+.greeting > p {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.greeting > div {
+    font-size: x-large;
+    font-weight: 700;
 }
 
 .buttons {
@@ -49,15 +92,44 @@ a {
     align-items: center;
 }
 
-.sidebar {
-    display: grid;
-    background-color: blue;
-    grid-area: 1 / 1 / -1 / 2;
+.buttons > button {
+    background-color: rgb(20, 152, 228);
     color: white;
+    height: clamp(2rem, 3rem, 5rem);
+    width: clamp(3rem, 7rem, 9rem);
+    font-weight: 900;
+    font-size: large;
+    border: none;
+    border-radius: 1.5rem;
 }
 
-.logo > h2 {
-    display: inline;
+.sidebar {
+    display: grid;
+    grid-template-rows:;
+    background-color: rgb(36, 175, 255);
+    grid-area: 1 / 1 / -1 / 2;
+    color: white;
+    padding: 2rem;
+}
+
+.logo {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    height: clamp(100px, 10%, 300px);
+}
+
+#logo-img {
+    height: auto;
+    width: 75%;
+}
+
+.sidebar > div > div > img {
+    filter: invert(1);
+}
+
+.sidebar > div > img {
+    filter: invert(1);
 }
 
 .navbar {
@@ -66,15 +138,24 @@ a {
 
 .foobar {
     display: grid;
+    grid-template-rows: repeat(3, minmax(20%, calc(100/3)))
+    align-content: ;
 }
 
-.content {
+.link {
     display: grid;
-    background-color: orange;
+    grid-template-columns: 1fr 3fr;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.content {  
+    display: grid;
+    background-color: #e6e6e6;
     grid-area: 2 / 2 / -1 / -1;
     grid-template-columns: 5fr 2fr;
     grid-template-rows: 1fr 1fr;
-    padding: 2rem 1.5rem;
+    padding: var(--content-padding);
     gap: 1rem;
 }
 
@@ -86,29 +167,46 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
+    margin-top: 1rem;
+    height: calc(100% - var(--content-padding-bot))
 }
 
 .card {
-    border: solid black 1px;
-    padding: 1rem;
+    border-left: solid rgb(255, 174, 0) 10px;
+    padding: 2rem;
     display: grid;
-    grid-template-rows: ;
+    gap: 1rem;
+    justify-items: end;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.card > div > button > img {
+    background-color: white;
+    border: none;
 }
 
 .announcements {
     grid-area: 1 / 2 / -2 / -1;
+    height: calc((100% - var(--content-padding-bot) / 2));
 }
 
 #announcements-grid {
     border: solid black 1px;
-    padding: 1rem;
+    padding: 2rem;
     display: grid;
     gap: 0.5rem;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    height: 75%;
+    margin-top: 1rem;
 }
 
 .trending {
     grid-area: 2 / 2 / -1 / -1;
+    height: calc((100% - var(--content-padding-bot) / 2));
 }
 
 #trending-grid {
@@ -116,9 +214,14 @@ a {
     border: solid black 1px;
     padding: 1rem;
     gap: 1rem;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    margin-top: 1rem;
 }
 
 .trending-profile {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    gap: 1rem;
 }
